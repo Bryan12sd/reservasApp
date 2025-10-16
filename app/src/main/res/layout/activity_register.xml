@@ -9,38 +9,126 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="32dp"
         android:padding="24dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registro"
-            android:textSize="22sp"
-            android:layout_marginBottom="16dp"/>
+            android:gravity="center"
+            android:text="Crear cuenta"
+            android:textSize="40sp"
+            android:textColor="@color/blue_gray"
+            android:layout_marginBottom="24dp" />
 
-        <EditText
-            android:id="@+id/etEmailReg"
-            android:layout_width="match_parent"
+        <!-- Nombre -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="Correo"
-            android:inputType="textEmailAddress"/>
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="12dp"
+            app:strokeColor="@color/blue_gray">
 
-        <EditText
-            android:id="@+id/etPasswordReg"
-            android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre completo"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:background="@android:color/transparent" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Teléfono -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:layout_marginTop="8dp"/>
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="12dp"
+            app:strokeColor="@color/blue_gray">
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Teléfono"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:background="@android:color/transparent" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Correo -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="12dp"
+            app:strokeColor="@color/blue_gray">
+
+            <EditText
+                android:id="@+id/etEmailReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo electrónico"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:background="@android:color/transparent" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Contraseña -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="12dp"
+            app:strokeColor="@color/blue_gray"
+            android:layout_marginBottom="24dp">
+
+            <EditText
+                android:id="@+id/etPasswordReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:background="@android:color/transparent" />
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/primary"
-            android:text="Crear cuenta" />
+            android:layout_gravity="center"
+            android:background="@drawable/button_primary"
+            android:text="Crear cuenta"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvBackToLogin"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="¿Ya tienes cuenta? Inicia sesión"
+            android:textColor="@color/blue_gray"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/button_secondary"
+            android:text="Volver"
+            android:textColor="@color/blue_gray" />
     </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

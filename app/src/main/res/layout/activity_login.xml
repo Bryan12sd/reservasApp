@@ -10,39 +10,98 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-306dp">
+        android:gravity="center_horizontal"
+        android:padding="16dp">
 
-        <EditText
-            android:id="@+id/etEmail"
+        <!-- Imagen -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="313dp"
+            android:layout_height="250dp"
+            android:contentDescription="@string/nav_header_desc"
+            android:paddingTop="1dp"
+            android:layout_marginBottom="24dp"
+            app:srcCompat="@drawable/primary" />
+
+        <!-- Título -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo" />
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/blue_gray"
+            android:text="ReservaSalasApp"
+            android:layout_marginBottom="24dp" />
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
+        <!-- Inputs -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:selectAllOnFocus="false"
-            android:singleLine="false" />
+            android:gravity="center_horizontal"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/blue_gray"
+            android:layout_marginBottom="16dp">
 
+            <EditText
+                android:layout_width="300dp"
+                android:id="@+id/etEmail"
+                android:layout_height="wrap_content"
+                android:hint="Correo"
+                android:padding="12dp"
+                android:background="@android:color/transparent"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/blue_gray"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:background="@android:color/transparent"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botones -->
         <Button
             android:id="@+id/btnLogin"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_primary"
+            android:text="Iniciar sesión"
+            android:textColor="@android:color/white" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/primary"
-            android:text="Iniciar sesión" />
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/blue_gray"
+            android:text="¿Aún no tienes una cuenta? Regístrate aquí, por favor"
+
+            android:layout_margin="15dp"/>
 
         <Button
             android:id="@+id/btnRegisterLogin"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/primary"
+            android:layout_gravity="center"
+            android:background="@drawable/button_primary"
             android:text="Registrarse" />
+
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
