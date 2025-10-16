@@ -7,21 +7,27 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.ReservaSalasApp.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/primary"
-            app:popupTheme="@style/Theme.ReservaSalasApp.PopupOverlay" />
-
+        <!-- cambia color del ícono -->
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:titleTextColor="@android:color/white"
+        app:layout_anchor="@+id/appBarLayout"
+        app:navigationIconTint="@android:color/white"
+        app:layout_anchorGravity="start|bottom"
+
+        app:popupTheme="@style/Theme.ReservaSalasApp.PopupOverlay" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slid"
+        android:id="@+id/nav_slideshow"
         android:name="com.example.reservasalasapp.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_slideshow" />

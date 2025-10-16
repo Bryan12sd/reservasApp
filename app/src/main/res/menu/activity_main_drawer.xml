@@ -8,19 +8,20 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/home"
             android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/user"
+            android:title="@string/menu_profile" />
 
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/profile"
-            android:title="@string/menu_profile" />
+            android:icon="@drawable/calendar"
+            android:title="@string/menu_reservation" /> />
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/map_marker_alt_solid"
+            android:icon="@drawable/map"
             android:title="@string/menu_map" />
-        <item
-            android:id="@+id/nav_reservation"
-            android:icon="@drawable/calendar"
-            android:title="@string/menu_reservation" />
+
         <item
             android:id="@+id/nav_rule"
             android:icon="@drawable/book"
