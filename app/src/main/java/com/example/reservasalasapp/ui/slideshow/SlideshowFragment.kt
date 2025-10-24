@@ -1,5 +1,6 @@
 package com.example.reservasalasapp.ui.slideshow
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.reservasalasapp.data.ReservaDBHelper
 import com.example.reservasalasapp.databinding.FragmentSlideshowBinding
 import com.example.reservasalasapp.model.Reserva
+import java.util.Calendar
 
 class SlideshowFragment : Fragment() {
 
@@ -22,6 +24,30 @@ class SlideshowFragment : Fragment() {
     ): View {
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
 
+        // 👉 Configuramos el selector de fecha
+        binding.etFecha.apply {
+            isFocusable = false
+            isClickable = true
+
+            setOnClickListener {
+                val calendario = Calendar.getInstance()
+                val año = calendario.get(Calendar.YEAR)
+                val mes = calendario.get(Calendar.MONTH)
+                val día = calendario.get(Calendar.DAY_OF_MONTH)
+
+                val datePicker = DatePickerDialog(
+                    requireContext(),
+                    { _, year, month, dayOfMonth ->
+                        val fechaSeleccionada = String.format("%04d-%02d-%02d", year, month + 1, dayOfMonth)
+                        setText(fechaSeleccionada)
+                    },
+                    año, mes, día
+                )
+                datePicker.show()
+            }
+        }
+
+        // 👉 Botón Guardar reserva
         binding.btnGuardar.setOnClickListener {
             val usuario = binding.etUsuario.text.toString().trim()
             val fecha = binding.etFecha.text.toString().trim()

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.reservasalasapp.R
 import com.mapbox.geojson.Point
 import com.mapbox.maps.CameraOptions
@@ -54,18 +55,22 @@ class MapFragment : Fragment() {
         val zones = listOf(
             Point.fromLngLat(-78.513284, -0.219463), // Zona 1
             Point.fromLngLat(-78.508456, -0.215086), // Zona 2
-            Point.fromLngLat(-78.518410,  -0.229089) ,
-            Point.fromLngLat(-78.512405,  -0.219753)// Zona 3
-                    ,
+            Point.fromLngLat(-78.518410,  -0.229089),
+            Point.fromLngLat(-78.512405,  -0.219753) // Zona 3
         )
-
-
 
         // Agregar marcadores para cada zona
         zones.forEach { addMarker(it) }
 
         // Pedir permisos de ubicación
         checkLocationPermission()
+
+        // ✅ 🔹 NUEVO: Detectar clic en marcador y navegar a reservaciones
+        pointAnnotationManager.addClickListener {
+            val navController = findNavController()
+            navController.navigate(R.id.nav_slideshow) // ID del fragment de reservaciones
+            true // indica que el clic fue manejado
+        }
 
         return mapView
     }
