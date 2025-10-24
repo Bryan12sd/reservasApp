@@ -7,7 +7,7 @@ Aplicación Android que permite a los usuarios registrar cuentas, gestionar rese
 - Android Studio (Kotlin/Java)
 - SQLite (gestión de reservas)
 - SharedPreferences (manejo de sesión)
-- Google Maps API
+- Mapbox API
 - Material Design y RecyclerView
 
 ---
